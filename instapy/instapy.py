@@ -86,6 +86,8 @@ class InstaPy:
                  bypass_suspicious_attempt=False,
                  multi_logs=False):
 
+        self.person_list_to_like_posts = []
+
         if nogui:
             self.display = Display(visible=0, size=(800, 600))
             self.display.start()
@@ -2050,6 +2052,8 @@ class InstaPy:
                                                                         self.simulation,
                                                                         self.logger,
                                                                         self.logfolder)
+                
+                self.person_list_to_like_posts.extend(person_list)
 
             except (TypeError, RuntimeWarning) as err:
 
